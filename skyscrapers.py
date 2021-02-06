@@ -3,9 +3,6 @@ GitHub repository: https://github.com/Andrusyshyn-Orest/skyscrapers
 
 This module represents skyscrapers game.
 
->>> read_input("check.txt")
-['***21**', '412453*', '423145*', '*543215', '*35214*', '*41532*', '*2*1***']
-
 >>> left_to_right_check("412453*", 4)
 True
 >>> left_to_right_check("452453*", 5)
@@ -53,9 +50,6 @@ False
 >>> check_columns(['***21**', '412553*', '423145*', '*543215',\
 '*35214*', '*41532*', '*2*1***'])
 False
-
->>> check_skyscrapers("check.txt")
-True
 """
 
 
@@ -63,9 +57,6 @@ def read_input(path: str) -> list:
     """
     Read game board file from path.
     Return list of str.
-
-    >>> read_input("check.txt")
-    ['***21**', '412453*', '423145*', '*543215', '*35214*', '*41532*', '*2*1***']
     """
 
     check_lst = []
@@ -230,9 +221,6 @@ def check_skyscrapers(input_path: str) -> bool:
     Main function to check the status of skyscraper game board.
     Return True if the board status is compliant with the rules,
     False otherwise.
-
-    >>> check_skyscrapers("check.txt")
-    True
     """
 
     board = read_input(input_path)
@@ -249,5 +237,5 @@ def check_skyscrapers(input_path: str) -> bool:
 
 if __name__ == "__main__":
     import doctest
-    print(check_skyscrapers("check.txt"))
+    #print(check_skyscrapers("check.txt"))
     print(doctest.testmod())
