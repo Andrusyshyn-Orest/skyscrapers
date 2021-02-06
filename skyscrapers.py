@@ -1,3 +1,64 @@
+"""
+GitHub repository: https://github.com/Andrusyshyn-Orest/skyscrapers
+
+This module represents skyscrapers game.
+
+>>> read_input("check.txt")
+['***21**', '412453*', '423145*', '*543215', '*35214*', '*41532*', '*2*1***']
+
+>>> left_to_right_check("412453*", 4)
+True
+>>> left_to_right_check("452453*", 5)
+False
+
+>>> check_not_finished_board(['***21**', '4?????*', '4?????*',\
+'*?????5', '*?????*', '*?????*', '*2*1***'])
+False
+>>> check_not_finished_board(['***21**', '412453*', '423145*',\
+'*543215', '*35214*', '*41532*', '*2*1***'])
+True
+>>> check_not_finished_board(['***21**', '412453*', '423145*',\
+'*5?3215', '*35214*', '*41532*', '*2*1***'])
+False
+
+>>> check_uniqueness_in_rows(['***21**', '412453*', '423145*',\
+'*543215', '*35214*', '*41532*', '*2*1***'])
+True
+>>> check_uniqueness_in_rows(['***21**', '452453*', '423145*',\
+'*543215', '*35214*', '*41532*', '*2*1***'])
+False
+>>> check_uniqueness_in_rows(['***21**', '412453*', '423145*',\
+'*553215', '*35214*', '*41532*', '*2*1***'])
+False
+
+>>> check_horizontal_visibility(['***21**', '412453*', '423145*',\
+'*543215', '*35214*', '*41532*', '*2*1***'])
+True
+>>> check_horizontal_visibility(['***21**', '452453*', '423145*',\
+'*543215', '*35214*', '*41532*', '*2*1***'])
+False
+>>> check_horizontal_visibility(['***21**', '452413*', '423145*',\
+'*543215', '*35214*', '*41532*', '*2*1***'])
+False
+>>> check_horizontal_visibility(['***21**', '*24137', '423145*',\
+'*543215', '*35214*', '*41532*', '*2*1***'])
+False
+
+>>> check_columns(['***21**', '412453*', '423145*', '*543215',\
+'*35214*', '*41532*', '*2*1***'])
+True
+>>> check_columns(['***21**', '412453*', '423145*', '*543215',\
+'*35214*', '*41232*', '*2*1***'])
+False
+>>> check_columns(['***21**', '412553*', '423145*', '*543215',\
+'*35214*', '*41532*', '*2*1***'])
+False
+
+>>> check_skyscrapers("check.txt")
+True
+"""
+
+
 def read_input(path: str) -> list:
     """
     Read game board file from path.
